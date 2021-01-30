@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>攒金</title>
+
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+ <div class="hidden">  
+    <script type="text/javascript">  
+        <!--//--><![CDATA[//><!--  
+            var images = new Array()  
+            function preload() {  
+                for (i = 0; i < preload.arguments.length; i++) {  
+                    images[i] = new Image()  
+                    images[i].src = preload.arguments[i]  
+                }  
+            }  
+            preload(  
+                "img/2.png", 
+                "img/4.png",  
+                "img/8.png",
+                "img/16.png",
+                "img/32.png",
+                "img/64.png",
+                "img/128.png",  
+                "img/256.png",
+                "img/512.png",
+                "img/1024.png",
+                "img/2048.png"
+            ) 
+        //--><!]]>  
+    </script>  
+</div>
+  <div class="container">
+    <div class="heading">
+      <h1 class="title">攒金</h1>
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+      </div>
+    </div>
+
+    <div class="above-game">
+      <p class="game-intro">这是一个魔方空间，听说有<strong>满满的金条！</strong></p>
+      <a class="restart-button">开始攒</a>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button">化身数字</a>
+          <a id="retry-button" class="retry-button"></a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+
+    <p>
+    Created by <a href="http://luoninginfo.cn" target="_blank">Luoning.</a> Based on <a href="http://gabrielecirulli.com" target="_blank">2048 by Gabriele Cirulli.</p>
+  </div>
+
+  <script src="js/bind_polyfill.js"></script>
+  <script src="js/classlist_polyfill.js"></script>
+  <script src="js/animframe_polyfill.js"></script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/html_actuator.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/local_storage_manager.js"></script>
+  <script src="js/game_manager.js"></script>
+  <script src="js/application.js"></script>
+</body>
+</html>

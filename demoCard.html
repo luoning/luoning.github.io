@@ -1,0 +1,291 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的名片</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta property="og:title" content="吴志远-Ken-华运国际">
+    <meta property="og:description" content="感谢您关注我的名片，在这里您可以了解最新的全球航运信息，查询实时运价，也可以了解货运实时状态。">
+    <meta property="og:image" content="http://www.cntrans.cn/Uploads/59f03144ad68e.png">
+    <meta property="og:url" content="http://luoninginfo.cn/demoCard.html"> 
+    <link rel="stylesheet" href="http://m.sui.taobao.org/dist/css/sm.min.css">
+    <link rel="stylesheet" href="http://m.sui.taobao.org/dist/css/sm-extend.min.css">
+    <link rel="stylesheet" href="main.css">
+
+  </head>
+  <body>
+
+  <div class="page-group">
+      <!-- 你的html代码 -->
+      <div class="page">
+          <header class="bar bar-nav">
+              <a class="button button-link button-nav pull-left" href="cardList.html">
+                  <span class="icon icon-left"></span>
+                  返回
+              </a>
+              <h1 class="title">吴志远-Ken-华运国际</h1>
+              <a class="button pull-right">消息</a>
+          </header>
+          <nav class="bar bar-tab">
+              <a class="tab-item external active" href="#">
+                  <span class="icon icon-friends"></span>
+                  <span class="tab-label">名片</span>
+              </a>
+              <a class="tab-item external" href="https://m.sofreight.com/freight#fcl">
+                  <span class="icon icon-app"></span>
+                  <span class="tab-label">产品</span>
+              </a>
+              <a class="tab-item external" href="https://author.baidu.com/home?type=profile&action=profile&context=%7B%22app_id%22%3A%221596810076518916%22%2C%22from%22%3A%22dynamic%22%7D">
+                  <span class="icon icon-star"></span>
+                  <span class="tab-label">动态</span>
+              </a>
+              <a class="tab-item external" href="http://www.cntrans.cn/">
+                  <span class="icon icon-home"></span>
+                  <span class="tab-label">官网</span>
+              </a>
+          </nav>
+          <div class="content">
+              <!-- 这里是页面内容区 -->
+              <div class="page-index">
+                  <div id='nameCard' class="card ">
+                      <div class='cardImg'> </div>
+                      <div class='cardChief row card-content-inner'>
+                        <div class="col-80">
+                          <div class='name'>吴志远-Ken<span class='job'>客户经理</span></div>
+                          <div class='phone' onclick="callphone(136321545221)" >18524211241</div>
+                        </div>
+                        <div class='col-20'>
+                          <div class='logo pull-right'></div>  
+                        </div>             
+                      </div>
+                      <!-- <hr class="nameCardHr"> -->
+                      <div class='cardDetails card-swich'>
+                        <div id='cardButtonOn' class='cardButton' onclick="clickHideCard()" style="display:none">
+                          收起以下名片内容  <span class="icon icon-down"></span>
+                        </div>
+                        <div id='cardButtonOff' onclick="clickShowCard()"  class='cardButton'>
+                          展开详细名片内容  <span class="icon icon-up"></span>
+                        </div>
+                        <div id='detailsContentsList' style="display:none">
+                          <div class="items row">
+                            <p class="itemsTitle col-20">电话</p>
+                            <p class="details col-60">13632154521</p>
+                            <p class="col-20"><a onclick="callphone(136321545221)" class="button pull-right">拨打</a></p>
+                          </div>
+                          <div class="items row">
+                            <p class="itemsTitle col-20">座机</p>
+                            <p class="details col-60">075526621214</p>
+                            <p class="col-20"><a onclick="callphone('075526621214')"  class="button pull-right">拨打</a></p>
+                          </div>
+                          <div class="items row">
+                            <p class="itemsTitle col-20">微信</p>
+                            <p class="details col-60">13632154521</p>
+                            <p class="col-20"><a class="button pull-right">复制</a></p>
+                          </div>
+                          <div class="items row">
+                            <p class="itemsTitle col-20">邮箱</p>
+                            <p class="details col-60">your@email.com</p>
+                            <p class="col-20"><a class="button pull-right">复制</a></p>
+                          </div>
+                          <div class="items row">
+                            <p class="itemsTitle col-20">公司</p>
+                            <p class="details col-60">一科互联</p>
+                            <p class="col-20"><a class="button pull-right">复制</a></p>
+                          </div>
+                          <div class="items row">
+                            <p class="itemsTitle col-20">地址</p>
+                            <p class="details col-60">深圳市南山区软件产业基地4D307-308</p>
+                            <p class="col-20"><a class="button pull-right">复制</a></p></div>
+                          </div>        
+                        </div>
+                        <div class='actionButton row card-content-inner'>
+                          <div class='share col-50'><a class="button  button-success">分享名片</a>
+                            <div class="wiewerImg">
+                              <img src="https://sofreight-app.yemet.com/upload/wxlogo/358f4dc69ed0443bd1e8429f0331fcd95ae54aa6.jpg">
+                              <img src="https://sofreight-app.yemet.com/upload/wxlogo/117df4c5105234b14be74d956c752f6e15274f94.jpg">
+                              <img src="https://sofreight-app.yemet.com/upload/portrait/7b064368502bcf379e2ef700221e8400.png">
+                              <img src="https://sofreight-app.yemet.com/upload/portrait/cfede6573ea010dd3b7dc40a33281468.png">
+                              <img src="https://sofreight-app.yemet.com/upload/portrait/f8ecebadc01efb8d278edd727ffd37b9.jpg">
+                              <img src="https://sofreight-app.yemet.com/upload/wxlogo/5277adaa2631f31a48728728b7e83b6495841202.jpg">
+                            </div>
+                            <div class="viewNum">48521人浏览</div>
+                          </div>
+                          <div class='contact col-50'>
+                            <a class="button button-fill button-success">交换联系方式</a>
+                                  
+                          <div class="Great  pull-right">
+                              <img src=""><br/>
+                              靠谱<span class='number'>485K</span>
+                            </div>
+                          </div>                      
+                        </div>
+                      </div>  
+                    </div>
+                  <div class="card">
+                      <div valign="bottom" class="pdesign card-header color-white no-border">服务推荐</div>
+                      <div class="card-content">
+                          <div class="card-content-inner">
+                            <div class="productList">
+                      <div class="row pdesign">
+                        <div class="col-20">目的港</div>
+                        <div class="col-20">起运港</div>
+                        <div class="col-20">20GP</div>
+                        <div class="col-20">40GP</div>
+                        <div class="col-20">40HC</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-20">蛇口</div>
+                        <div class="col-20">曼谷PAT</div>
+                        <div class="col-20">$250</div>
+                        <div class="col-20">$300</div>
+                        <div class="col-20">$400</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-20">盐田</div>
+                        <div class="col-20">鹿特丹</div>
+                        <div class="col-20">$750</div>
+                        <div class="col-20">$1250</div>
+                        <div class="col-20">$1350</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-20">蛇口</div>
+                        <div class="col-20">雅加达1号码头</div>
+                        <div class="col-20">$250</div>
+                        <div class="col-20">$400</div>
+                        <div class="col-20">$450</div>
+                    </div>
+                                                </div>
+                          </div>
+                      </div>
+                      <div class="card-footer">
+                          <a href="#" class="link">分享</a>
+                          <a href="https://m.sofreight.com/freight#fcl" class="link">全部产品</a>
+                      </div>
+                  </div>
+                  <div class="card facebook-card">
+                    <div class="card-header no-border">
+                      <div class="facebook-avatar"><img src="https://sofreight-app.yemet.com/upload/wxlogo/d9d294ae3ab424476db058f4ad2c3dc54543b73d.jpg" width="34" height="34"></div>
+                      <div class="facebook-name">Ken</div>
+                      <div class="facebook-date"><p>大家好，我是吴志远，大家可以叫我Ken。<br/></p>
+                              <p>感谢您关注我的名片，在这里您可以了解最新的全球航运信息，查询实时运价，也可以了解货运实时状态。<br/></p>
+                              <p>您在此可享受专人服务，任何疑问即时得到解决。我们热诚期待您的垂询。</p></div>
+                    </div>
+                    <div class="card-footer no-border">
+                      <a href="#" class="link">赞</a>
+                      <a href="#" class="link">评论</a>
+                      <a href="#" class="link">分享</a>
+                    </div>
+                  </div>
+                  <div class="card">
+                      <div valign="bottom" class="pdesign card-header color-white no-border">经验与擅长</div>
+                      <div class="card-content">
+                          <div class="card-content-inner">
+                              <div class='voice'>从业经验：10年</div>
+                              <div class='voice'>
+                              擅长：专业从事北美线业务十几年，从加勒比业务起家，有很多这边的经验，在市场上获得了大家的好评</div>
+                          </div>
+                      </div>
+                      <div class="card-footer">
+                          <a href="#" class="link">建议投诉</a>
+                          <a href="#" class="link">海运整箱</a>
+                          <a href="#" class="link">海运拼箱</a>
+                          <a href="#" class="link">中欧班列</a>
+                      </div>                    
+                      <div class="card-content">
+                          <div class="card-content-inner">
+                             <div class='tags'>
+                                <a class="tagItems tagAdd"><span>+</span></a>
+                                <a class="tagItems">靠谱<span>854</span></a>
+                                <a class="tagItems">准确<span>54</span></a>
+                                <a class="tagItems">及时<span>14</span></a>
+                                <a class="tagItems">服务好<span>7154</span></a>
+                            </div>    
+                          </div>
+                      </div>                      
+                  </div>
+                  <div class="card">
+                      <div valign="bottom" class="pdesign card-header color-white no-border">视频印象</div>
+                      <div class="card-content">
+                          <div class="card-content-inner">
+                             <div class='video'>
+                              <video width='100%' he controls=controls>
+                                <source src="https://bjhnewmda2.bdstatic.com/43367157424777493468486e45534759/6151354531693462/4569338cbdb173c3d45c28247ef08db0303c8cde30f9aa24ab9f87333ef27ea8ab8c1e5478579e1e3e7f03b5fbc941e9.mp4?auth_key=1543152117-0-0-9716855f8d405285c56e3877371d62fb " type="">
+                              </video>
+                                   </div>    
+                          </div>
+                      </div>
+                  </div>
+                  <!-- <div class="card facebook-card">
+                      <div class="card-header no-border">
+                        <div class="facebook-avatar"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" width="34" height="34"></div>
+                        <div class="facebook-name">夜萧</div>
+                        <div class="facebook-date">星期一 3:47pm</div>
+                      </div>
+                      <div class="card-content"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" width="100%"></div>
+                      <div class="card-footer no-border">
+                        <a href="#" class="link">赞</a>
+                        <a href="#" class="link">评论</a>
+                        <a href="#" class="link">分享</a>
+                      </div>
+                    </div> -->
+                  <div class="card">
+                      <div valign="bottom" class="pdesign card-header color-white no-border">我的照片墙</div>
+                      <div class="card-content">
+                          <div class="card-content-inner">
+                              <div class='imageList'> 
+                                <img src="https://m.sofreight.com/assets/image/%E6%B5%B7%E5%85%B3%E4%B8%80%E7%AB%99%E5%BC%8F%E6%9C%8D%E5%8A%A1.png" width="100%"> 
+                                <img src="">  
+                                <img src="">  
+                                <img src="">      
+                                <img src="">  
+                                <img src="">  
+                                <img src="">       
+                              </div>    
+                          </div>
+                      </div>
+                  </div>
+                  <!-- <div class="card">
+                      <div valign="bottom" class="pdesign card-header color-white no-border">旅途的山</div>
+                      <div class="card-content">
+                          <div class="card-content-inner">
+                              <p class="color-gray">发表于 2015/01/15</p>
+                              <p>此处是内容...</p>
+                          </div>
+                      </div>
+                      <div class="card-footer">
+                          <a href="#" class="link">赞</a>
+                          <a href="#" class="link">更多</a>
+                      </div>
+                  </div> -->                  
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://m.sui.taobao.org/dist/js/sm.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://m.sui.taobao.org/dist/js/sm-extend.js' charset='utf-8'></script>
+    <script>
+        $.init();
+    </script>
+    <script type="text/javascript">
+      function clickHideCard(){
+         document.getElementById("cardButtonOn").style.display='none';
+         document.getElementById("cardButtonOff").style.display='block';
+          document.getElementById("detailsContentsList").style.display='none'
+      }
+      function clickShowCard(){
+         document.getElementById("cardButtonOn").style.display='block';
+         document.getElementById("cardButtonOff").style.display='none';
+          document.getElementById("detailsContentsList").style.display='block'
+      }
+      function callphone(c){    
+        window.location.href = 'tel:'+c;
+    }
+    </script>
+  </body>
+</html>

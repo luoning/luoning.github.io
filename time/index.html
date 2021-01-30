@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <title>Online手账</title> 
+  <script src="./data.js"></script> 
+  <script src="./script.js"></script> 
+  <script type="text/javascript" src="./zepto.min.js"></script> 
+  <link rel="stylesheet" type="text/css" href="./main.css" /> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <meta name="author" content="Molluo" /> 
+  <meta content="24节气,节日,生活,传统,习俗" name="Keywords" /> 
+  <meta name="renderer" content="webkit" /> 
+  <meta http-equiv="Cache-Control" content="no-siteapp" /> 
+  <meta name="mobile-web-app-capable" content="yes" /> 
+  <meta name="apple-mobile-web-app-capable" content="yes" /> 
+<meta property="og:type" content="news"/>
+<meta property="og:title" content="Online手账"/>
+<meta property="og:description" content="24节气小玩具"/>
+<meta property="og:image" content="http://365jia.cn/uploads/news/folder_1744198/images/a8ffb0f08fdb7b593bfec2e15cf0976b.jpeg"/>
+<meta property="og:url" content="http://www.luoninginfo.cn/time/"/>
+<meta property="og:release_date" content="2017-11-26 22:58"/>
+
+ </head> 
+ <body> 
+  <div data-reactroot="" class="container container-fill container-column" id="sk-container"> 
+   <div class="view"> 
+    <header class="navbar navbar-primary navbar mlogo">
+     <h2 class="navbar-title navbar-center">Online手账</h2>
+     <div class="navbar-nav navbar-left">
+      <a href="#" class="navbar-nav-item"></a>
+     </div>
+     <div class="navbar-nav navbar-right">
+      <a href="#" class="navbar-nav-item"></a>
+     </div>
+    </header> 
+    <div class="container container-fill container-scrollable"> 
+     <div class="group group-no-padded">
+     	 <script type="text/javascript">
+     	document.write('<img width="660" src="'+data.article[godGiven(data.article.length-1)].img+'">')</script>
+      <div class="group-body"> 
+       <script type="text/javascript">
+document.write('<ul  class="list">')
+for (var i = data.jieqi.length-1; i >= 0; i--) {
+	document.write('<li class="item item-linked">')
+	document.write('<a href="#">')
+	document.write('<div class="item-media"><img width="660" src="'+data.jieqi[i].img+'"></div>')
+	document.write('<div class="item-main">')
+	document.write('<div class="item-after">')
+	document.write('<div>')
+	document.write('<span>'+getJqTime(data.jieqi[i].time[0],data.jieqi[i].time[1])+'</span>')
+	document.write('<span class="badge badge-alert">'+data.jieqi[i].title+'</span>')
+	document.write('</div>')
+	document.write('</div>')
+	document.write('<span class="icon icon-right-nav item-icon"></span>')
+	document.write('<div class="item-desc">'+data.jieqi[i].title+' | '+data.jieqi[i].txt+'</div>')
+	document.write('</div>')
+	document.write('</a>')
+	document.write('</li>')
+	document.write('</ul>')
+}
+</script> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div>  
+ </body>
+</html>

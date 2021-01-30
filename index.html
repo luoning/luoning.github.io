@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Info.ln | find the truth</title>
+  <meta name="google" content="notranslate">
+  <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">-->
+  <meta name="keywords" content="视频,短视频,精选,搞笑,电影,广告,摄影,娱乐,美食,运动,音乐,MV,科技,动画,旅行,时尚,穿衣,综艺,短片,生活,搭配,景观,日报,创意,风景">
+  <!--<meta name="description" content="">
+ 
+  <link rel="shortcut icon" href="static/favicon.ico" type="image/vnd.microsoft.icon"> -->
+<link rel="stylesheet" href="static/style.css">
+<script src="https://use.fontawesome.com/d74ee8181b.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#header-nav-wechat").click(function(){
+    $("#qr-wechat").removeAttr("style");
+    $("#qr-wechat").addClass("show");
+  });
+  $("#qr-wechat").click(function(){
+    $("#qr-wechat").removeClass("show");
+    $("#qr-wechat").attr("style","display:none");
+
+  });
+});
+</script>
+ 
+</head>
+<body>
+<div class="container">
+    <nav id="header-nav">
+      <a rel="nofollow" id="header-nav-resume" href="/resume/" class="icon"><i class="fa fa-user fa-5" aria-hidden="true"></i></a>
+      <a rel="nofollow" id="header-nav-weibo" href="/" class="icon"><i class="fa fa-weibo fa-5" aria-hidden="true"></i></a>
+      <a rel="nofollow" id="header-nav-wechat" class="icon"><i class="fa fa-weixin fa-5" aria-hidden="true"></i></a>
+      <div class="top-title"><img src="static/logo.png"></img></div>
+    </nav>   
+      <div class="top-topic-list">
+    	<div onclick="window.location.href='http://blog.luoninginfo.cn'" class="top-topic" style="background-image: url(static/cat.jpeg)">
+    		<div class="top-topic-cover"></div>
+    		<h2 class="top-topic-title">生活总有一些让你忍不住的</h2>
+    		<p class="top-topic-meta">#不日常#</p>
+    	</div>
+        <div onclick="window.location.href='/game'"  class="top-topic" style="background-image: url(static/2.jpeg)">
+            <div class="top-topic-cover"></div>
+            <h2 class="top-topic-title">守不住的心思</h2>
+            <p class="top-topic-meta">#思考#</p>
+        </div>
+        <div onclick="window.location.href='/blog'"  class="top-topic" style="background-image: url(static/3.jpeg)">
+            <div class="top-topic-cover"></div>
+            <h2 class="top-topic-title">在路上，身体的穿越</h2>
+            <p class="top-topic-meta">#旅行时光#</p>
+        </div>
+        <div><a href="https://www.toutiao.com/i6549455192759206413/">One TEST</a></div>
+        <div onclick="window.location.href='http://blog.luoninginfo.cn/about'"  class="top-topic" style="background-image: url(static/resume.jpeg)">
+            <div class="top-topic-cover"></div>
+            <h2 class="top-topic-title">兴许你有兴趣</h2>
+            <p class="top-topic-meta">#关于#</p>
+        </div>
+      </div>
+<div class="top-topic-date">- @Shenzhen LastUpdate 2016.08.26 -</div></div>
+<div id="qr-wechat" class="modal" style="display:none">
+  <img src="/">
+  <p>识别二维码<br><br>关注「Info.ln」微信公众号</p><br/>
+  </div>
+
+</body>

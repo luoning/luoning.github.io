@@ -1,0 +1,87 @@
+.type_normal{
+    background-color: #ddd;
+}
+.type_On{
+    background-color: #eee;
+}
+#gamebox{
+    display: none; 
+    border-radius: 5px; 
+    background-color: #ddd; 
+    position: absolute;
+    padding: 5px;
+    margin:5px 0 0 22%;
+    box-shadow: 0px 2px 2px #000
+}
+
+#gamebox a{
+    padding: 10px 5px;
+    text-decoration: none;
+}
+.game{
+    margin:50px auto;
+    padding:0 20px;
+    float:left;
+    display:block;
+    width:200px;
+}
+.gameinfo{
+    width:200px;
+}
+.gameinfo a{
+    font-size:20px;
+    color:#fff;
+    text-decoration:none;
+    border-radius:10px 10px 0 0;
+    background-color:#053a93;
+    padding:10px;
+    display:block
+}
+.gameinfo .content{
+    padding:5px;
+    font-size:12px
+}
+.gamelink{
+    margin: 5px;
+    margin-bottom:15px;
+    background-color: #ccc;
+    border-radius: 10px;
+    width: 90px;
+    height: 90px;
+    float:left;
+    box-shadow: 0 0 3px #ccc;
+}
+.gamelink a{
+    display: block;
+    font-size:12px;
+    padding:60px 25px 0px 25px;
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+}
+
+.gamelink:hover{
+box-shadow: 0 0 5px #000;
+}
+
+.catch{
+    background-image: url("catch/img/2048.png")
+}
+.gold{
+background-image: url("gold/img/2048.png")
+}
+.cash{
+background-image: url("cash/img/4.gif")
+}
+.change{
+background-image: url("change/style/2048.jpg")
+}
+.shooter{
+background-image: url("shooter/images/spaceBackground.png")
+}
+.bird{
+background-image: url("bird/assets/1.jpg")
+}
+.darkroom{
+background-image: url("adarkroom/img/adr.png") 
+}
