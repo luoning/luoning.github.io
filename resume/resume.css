@@ -1,75 +1,125 @@
-/*
----------------------------------------------------------------------------------
-	STRIPPED DOWN RESUME TEMPLATE
-    html resume
-
-    v0.9: 5/28/09
-
-    design and code by: thingsthatarebrown.com 
-                        (matt brown)
----------------------------------------------------------------------------------
-*/
-
-sub{font-size: 0.5em;color: #999
+/* --- 全局重置与基础设置 --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-.msg { padding: 10px; background: #222; position: relative; }
-.msg h1 { color: #fff;  }
-.msg a { margin-left: 20px; background: #408814; color: white; padding: 4px 8px; text-decoration: none; }
-.msg a:hover { background: #266400; }
 
-/* //-- yui-grids style overrides -- */
-body { font-family: Georgia; color: #444; }
-#inner { padding: 10px 80px; margin: 80px auto; background: #f5f5f5; border: solid #666; border-width: 8px 0 2px 0; }
-.yui-gf { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc; }
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* 防止滚动 */
+}
 
-/* //-- header, body, footer -- */
-#hd { margin: 2.5em 0 3em 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc }
-#hd h2 { text-transform: uppercase; letter-spacing: 2px; }
-#bd, #ft { margin-bottom: 2em; }
+body {
+    font-family: 'Montserrat', 'Noto Sans SC', sans-serif; /* 英文首选 Montserrat，中文使用 Noto Sans SC */
+    color: #ffffff;
+    background-color: #1a1a1a; /* 背景图加载失败时的底色 */
+    
+    /* --- 核心：大气背景图 --- */
+    background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2071&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* 背景固定，内容滚动时有视差效果 (当前页面无滚动) */
 
-/* //-- footer -- */
-#ft { padding: 1em 0 5em 0; font-size: 92%; border-top: 1px solid #ccc; text-align: center; }
-#ft p { margin-bottom: 0; text-align: center;   }
+    /* 使用 Flexbox 实现垂直和水平居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-/* //-- core typography and style -- */
-#hd h1 { font-size: 48px; text-transform: uppercase; letter-spacing: 3px; }
-h2 { font-size: 152% }
-h3, h4 { font-size: 122%; }
-h1, h2, h3, h4 { color: #333; }
-p { font-size: 100%; line-height: 18px; padding-right: 3em; }
-a { color: #990003 }
-a:hover { text-decoration: none; }
-strong { font-weight: bold; }
-li { line-height: 24px; border-bottom: 1px solid #ccc; }
-p.enlarge { font-size: 144%; padding-right: 6.5em; line-height: 24px; }
-p.enlarge span { color: #000 }
-.contact-info { margin-top: 7px; }
-.first h2 { font-style: italic; }
-.last { border-bottom: 0 }
+/* --- 背景遮罩层 --- */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 黑色半透明遮罩，让背景变暗，使白色文字更清晰 */
+    background-color: rgba(10, 15, 25, 0.6); 
+    /* 使用 backdrop-filter 增加磨砂玻璃效果，更显高级感 (浏览器支持) */
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
 
+/* --- 主内容容器 --- */
+.main-container {
+    position: relative;
+    z-index: 2; /* 确保内容在遮罩层之上 */
+    padding: 2rem;
+    animation: fadeInSlideUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
 
-/* //-- section styles -- */
+/* --- 姓名 H1 标题 --- */
+.name {
+    font-size: clamp(2.5rem, 8vw, 5rem); /* 响应式字体大小 */
+    font-weight: 700;
+    letter-spacing: 0.15em; /* 增加字间距，提升设计感 */
+    text-transform: uppercase; /* 字母大写，国际范 */
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
 
-a#pdf { display: block; float: left; background: #666; color: white; padding: 6px 50px 6px 12px; margin-bottom: 6px; text-decoration: none;  }
-a#pdf:hover { background: #222; }
+/* --- 标语/说明 P 标签 --- */
+.tagline {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2.5rem;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+}
 
-.job { position: relative; margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px solid #ccc; }
-.job h4 { position: absolute; top: 0.35em; right: 0 }
-.job p { margin: 0.75em 0 3em 0; }
+/* --- 核心链接 A 标签 --- */
+.cta-link {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 40px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px; /* 胶囊形状 */
+    transition: all 0.3s ease-in-out;
+}
 
-.last { border: none; }
-.skills-list {  }
-.skills-list ul { margin: 0; }
-.skills-list li { margin: 3px 0; padding: 3px 0; }
-.skills-list li span { font-size: 152%; display: block; margin-bottom: -2px; padding: 0 }
-.talent { width: 32%; float: left }
-.talent h2 { margin-bottom: 6px; }
+.cta-link:hover, .cta-link:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    transform: translateY(-3px) scale(1.05); /* 悬停时轻微上浮放大 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
 
-#srt-ttab { margin-bottom: 100px; text-align: center;  }
-#srt-ttab img.last { margin-top: 20px }
+/* --- 页脚 --- */
+.footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    z-index: 2;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+    animation: fadeIn 2s ease-in-out forwards;
+}
 
-/* --// override to force 1/8th width grids -- */
-.yui-gf .yui-u{width:80.2%;}
-.yui-gf div.first{width:12.3%;}
+/* --- 入场动画 --- */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
