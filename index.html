@@ -1,66 +1,355 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <title>Info.ln | find the truth</title>
-  <meta name="google" content="notranslate">
-  <!--<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">-->
-  <meta name="keywords" content="视频,短视频,精选,搞笑,电影,广告,摄影,娱乐,美食,运动,音乐,MV,科技,动画,旅行,时尚,穿衣,综艺,短片,生活,搭配,景观,日报,创意,风景">
-  <!--<meta name="description" content="">
- 
-  <link rel="shortcut icon" href="static/favicon.ico" type="image/vnd.microsoft.icon"> -->
-<link rel="stylesheet" href="static/style.css">
-<script src="https://use.fontawesome.com/d74ee8181b.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $("#header-nav-wechat").click(function(){
-    $("#qr-wechat").removeAttr("style");
-    $("#qr-wechat").addClass("show");
-  });
-  $("#qr-wechat").click(function(){
-    $("#qr-wechat").removeClass("show");
-    $("#qr-wechat").attr("style","display:none");
+  <title>Ning Luo · 罗宁 | 穿透迷雾，锚定价值</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #141414;
+      --text: #E8E6E3;
+      --subtext: #9E9C99;
+      --accent: #BEA472;
+      --card-bg: rgba(30, 30, 30, 0.85);
+      --border-color: rgba(190, 164, 114, 0.2);
+      --header-height: 70px;
+    }
 
-  });
-});
-</script>
- 
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; overflow: hidden; }
+    body {
+      font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      background-image: url('https://images.unsplash.com/photo-1554034483-26a0ac8c1501?q=80&w=2940&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      line-height: 1.8;
+    }
+    body::before {
+      content: '';
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(20, 20, 20, 0.85);
+      backdrop-filter: blur(3px);
+      z-index: -1;
+    }
+
+    #main-container { height: 100%; overflow: hidden; }
+
+    .main-header {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      height: var(--header-height);
+      display: flex; justify-content: center; align-items: center;
+      transition: background-color 0.4s ease;
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    }
+    .main-header.scrolled { background-color: rgba(20, 20, 20, 0.85); }
+    .main-nav { display: flex; gap: 35px; list-style: none; }
+    .main-nav a {
+      color: var(--subtext); font-weight: 400; font-size: 0.9rem;
+      position: relative; text-decoration: none; transition: color 0.3s ease;
+    }
+    .main-nav a:hover, .main-nav a.active { color: var(--text); }
+
+    .fullscreen-section {
+      height: 100vh; width: 100vw;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      position: relative;
+      padding: var(--header-height) 20px 40px;
+    }
+    .container { max-width: 900px; width: 100%; }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 700;
+      margin-bottom: 2rem; text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+    .hero .tagline-main {
+      font-size: clamp(1.1rem, 4vw, 1.2rem);
+      font-weight: 300; color: var(--subtext);
+      letter-spacing: 0.05em;
+    }
+    .scroll-down-indicator {
+      position: absolute; bottom: 30px; left: 50%;
+      transform: translateX(-50%); opacity: 0;
+      animation: bounce 2s infinite, fadeIn 1s 1.5s forwards;
+    }
+    .scroll-down-indicator a { color: var(--subtext); font-size: 2rem; text-decoration: none; }
+
+    .section-title {
+      font-size: clamp(1.8rem, 5vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 3rem; text-align: center;
+      letter-spacing: 0.05em;
+    }
+    
+    .creed-statement {
+        text-align: center; max-width: 750px; margin: 0 auto;
+        font-size: clamp(1.1rem, 3vw, 1.3rem);
+        font-weight: 300; line-height: 2.2;
+    }
+    .creed-statement strong {
+        font-weight: 700;
+        color: var(--accent);
+    }
+    .creed-statement span {
+        display: block;
+        margin-top: 2.5rem;
+        color: var(--subtext);
+        font-size: 1rem;
+    }
+    
+    .methodology-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background-color: var(--border-color);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    .methodology-item {
+        background-color: var(--card-bg);
+        padding: 30px;
+    }
+    .methodology-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 1rem;
+    }
+    .methodology-item p {
+        color: var(--subtext);
+        font-size: 0.95rem;
+    }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; }
+    .skill-item h6 { font-weight: 700; color: var(--text); margin-bottom: 0.75rem; font-size: 1.1rem;}
+    .skill-item p { color: var(--subtext); font-size: 0.95rem; line-height: 1.7;}
+    
+    .card { background-color: var(--card-bg); border: 1px solid var(--border-color); padding: 30px 35px; border-radius: 12px; backdrop-filter: blur(12px); }
+    .project-links { list-style: none; padding-left: 0; margin-top: 1.5rem; }
+    .project-links li { margin-bottom: 1rem; }
+    .project-links a { color: var(--text); text-decoration: none; font-size: 1.1rem; transition: color 0.3s, transform 0.3s; display: inline-block; }
+    .project-links a:hover { color: var(--accent); transform: translateX(5px); }
+    .project-links a::after { content: '→'; margin-left: 10px; color: var(--subtext); transition: color 0.3s; }
+    .project-links a:hover::after { color: var(--accent); }
+
+    .footer-content { text-align: center; }
+    .footer-content h2 { margin-bottom: 2rem; }
+    .footer-content p { color: var(--subtext); }
+
+    .fade-in-content { opacity: 0; transform: translateY(40px); transition: opacity 1.2s ease-out, transform 1.2s ease-out; }
+    .fade-in-content.visible { opacity: 1; transform: translateY(0); }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
+
+    @media (max-width: 768px) { .main-nav { display: none; } .methodology-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
-<div class="container">
-    <nav id="header-nav">
-      <a rel="nofollow" id="header-nav-resume" href="/resume/" class="icon"><i class="fa fa-user fa-5" aria-hidden="true"></i></a>
-      <a rel="nofollow" id="header-nav-weibo" href="/" class="icon"><i class="fa fa-weibo fa-5" aria-hidden="true"></i></a>
-      <a rel="nofollow" id="header-nav-wechat" class="icon"><i class="fa fa-weixin fa-5" aria-hidden="true"></i></a>
-      <div class="top-title"><img src="static/logo.png"></img></div>
-    </nav>   
-      <div class="top-topic-list">
-    	<div onclick="window.location.href='http://blog.luoninginfo.cn'" class="top-topic" style="background-image: url(static/cat.jpeg)">
-    		<div class="top-topic-cover"></div>
-    		<h2 class="top-topic-title">生活总有一些让你忍不住的</h2>
-    		<p class="top-topic-meta">#不日常#</p>
-    	</div>
-        <div onclick="window.location.href='/game'"  class="top-topic" style="background-image: url(static/2.jpeg)">
-            <div class="top-topic-cover"></div>
-            <h2 class="top-topic-title">守不住的心思</h2>
-            <p class="top-topic-meta">#思考#</p>
-        </div>
-        <div onclick="window.location.href='/blog'"  class="top-topic" style="background-image: url(static/3.jpeg)">
-            <div class="top-topic-cover"></div>
-            <h2 class="top-topic-title">在路上，身体的穿越</h2>
-            <p class="top-topic-meta">#旅行时光#</p>
-        </div>
-        <div><a href="https://www.toutiao.com/i6549455192759206413/">One TEST</a></div>
-        <div onclick="window.location.href='http://blog.luoninginfo.cn/about'"  class="top-topic" style="background-image: url(static/resume.jpeg)">
-            <div class="top-topic-cover"></div>
-            <h2 class="top-topic-title">兴许你有兴趣</h2>
-            <p class="top-topic-meta">#关于#</p>
-        </div>
-      </div>
-<div class="top-topic-date">- @Shenzhen LastUpdate 2016.08.26 -</div></div>
-<div id="qr-wechat" class="modal" style="display:none">
-  <img src="/">
-  <p>识别二维码<br><br>关注「Info.ln」微信公众号</p><br/>
+
+<div id="main-container">
+
+<header class="main-header" id="main-header">
+  <nav>
+    <ul class="main-nav">
+      <li><a href="#home" class="nav-link">首页</a></li>
+      <li><a href="#creed" class="nav-link">我的信条</a></li>
+      <li><a href="#approach" class="nav-link">我的方法论</a></li>
+      <li><a href="#foundation" class="nav-link">我的根基</a></li>
+      <li><a href="#explorations" class="nav-link">我的探索</a></li>
+      <li><a href="#connect" class="nav-link">寻求同行者</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="home" class="fullscreen-section hero">
+  <div class="container" style="text-align: center;">
+    <div class="fade-in-content visible">
+      <h1>穿透迷雾<br>锚定价值</h1>
+      <p class="tagline-main">用投资的眼光，做值得信赖的事</p>
+    </div>
   </div>
+  <div class="scroll-down-indicator"><a href="#creed" aria-label="Scroll down">&#8964;</a></div>
+</section>
+
+<section id="creed" class="fullscreen-section">
+  <div class="container fade-in-content">
+    <h2 class="section-title">我的信条</h2>
+    <p class="creed-statement">
+      资源终有尽时，向谁借？<br>
+      向天借的是<strong>运气</strong>，向己借的是<strong>时间</strong>，向周边借的是<strong>信任</strong>。<br>
+      这三者，皆不得辜负。
+      <span>这是我的行事准则，也是我衡量每一次合作的基石。</span>
+    </p>
+  </div>
+</section>
+
+<section id="approach" class="fullscreen-section">
+  <div class="container fade-in-content">
+    <h2 class="section-title">我的方法论</h2>
+    <div class="methodology-grid">
+        <div class="methodology-item">
+            <div class="methodology-title">天马行空 · 洞察航向</div>
+            <p>未来多是迷雾，但信念是罗盘。我与伙伴一起，在不确定性中构建清晰的战略愿景，敢于想象，审慎求证。</p>
+        </div>
+        <div class="methodology-item">
+            <div class="methodology-title">脚踏实地 · 构筑根基</div>
+            <p>哪怕只有一个支点，也要向下扎根。我专注于将宏大蓝图分解为可执行的步骤，构建稳固的产品与业务地基。</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section id="foundation" class="fullscreen-section">
+  <div class="container fade-in-content">
+    <h2 class="section-title">我的基点</h2>
+    <div class="skills-grid">
+      <div class="skill-item"><h6>战略洞察</h6><p>市场分析, 商业画布, 数据建模, 用户研究</p></div>
+      <div class="skill-item"><h6>产品构建</h6><p>Roadmap规划, 敏捷开发, 原型设计, 全周期管理</p></div>
+      <div class="skill-item"><h6>技术应用</h6><p>Python, SQL, GitHub, Docker, RAG应用</p></div>
+      <div class="skill-item"><h6>合作赋能</h6><p>跨团队沟通, 项目管理, 目标设定 (OKR)</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="explorations" class="fullscreen-section">
+  <div class="container fade-in-content">
+    <h2 class="section-title">我的探索</h2>
+    <div class="card">
+      <p>有动力才有行动。持续学习与创造，是我行动力的源泉。</p>
+      <ul class="project-links">
+        <li><a href="https://www.luoninginfo.cn/articles/">行业文章与思考</a></li>
+        <li><a href="https://www.luoninginfo.cn/tools/">效率工具集</a></li>
+        <li><a href="https://github.com/luoning/luoning.github.io">本站源码</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer id="connect" class="fullscreen-section">
+  <div class="container fade-in-content footer-content">
+    <h2 class="section-title">寻求同行者</h2>
+    <img src="https://www.luoninginfo.cn/assets/qr.jpg" alt="公众号二维码" style="width:130px; border-radius:12px; border: 1px solid var(--border-color); box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+    <p style="margin-top: 1.5rem;">如果您认同这份信条，<br>并寻求一位能共同穿越周期的伙伴，我期待与您对话。</p>
+    <p style="margin-top: 3rem; font-size: 0.85rem;">© <span id="year"></span> Ning Rho / 罗宁</p>
+  </div>
+</footer>
+
+</div> <!-- End of main-container -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- 基础设置 ---
+    const mainContainer = document.getElementById('main-container');
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const header = document.getElementById('main-header');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = Array.from(document.querySelectorAll('.fullscreen-section'));
+    let currentSectionIndex = 0;
+    let isScrolling = false;
+    const scrollDuration = 1000; // 动画持续时间
+
+    // --- 【核心交互】精准单次滚屏控制 ---
+    const scrollToSection = (index) => {
+        if (isScrolling || index < 0 || index >= sections.length) return;
+        isScrolling = true;
+        
+        const target = sections[index];
+        const startPosition = mainContainer.scrollTop;
+        const targetPosition = target.offsetTop;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, scrollDuration);
+            mainContainer.scrollTop = run;
+            if (timeElapsed < scrollDuration) {
+                requestAnimationFrame(animation);
+            } else {
+                currentSectionIndex = index;
+                updateNavAndAnimations();
+                setTimeout(() => { isScrolling = false; }, 300);
+            }
+        }
+        
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t * t * t + b;
+            t -= 2;
+            return -c / 2 * (t * t * t * t - 2) + b;
+        }
+
+        requestAnimationFrame(animation);
+    };
+    
+    // 监听鼠标滚轮事件
+    const handleWheel = (event) => {
+        event.preventDefault();
+        if (isScrolling) return;
+        
+        if (event.deltaY > 0) {
+            scrollToSection(currentSectionIndex + 1);
+        } else if (event.deltaY < 0) {
+            scrollToSection(currentSectionIndex - 1);
+        }
+    };
+
+    mainContainer.addEventListener('wheel', handleWheel, { passive: false });
+
+    // --- 导航链接点击 ---
+    navLinks.forEach((link, index) => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            scrollToSection(index);
+        });
+    });
+    
+    // --- 键盘方向键支持 ---
+    document.addEventListener('keydown', (event) => {
+        if (isScrolling) return;
+        if (event.key === 'ArrowDown' || event.key === 'PageDown') {
+            event.preventDefault();
+            scrollToSection(currentSectionIndex + 1);
+        } else if (event.key === 'ArrowUp' || event.key === 'PageUp') {
+            event.preventDefault();
+            scrollToSection(currentSectionIndex - 1);
+        }
+    });
+
+    // --- 更新导航高亮和动画 ---
+    const updateNavAndAnimations = () => {
+        navLinks.forEach((link, index) => {
+            link.classList.toggle('active', index === currentSectionIndex);
+        });
+
+        sections.forEach((section, index) => {
+            const content = section.querySelector('.fade-in-content');
+            if(content) {
+                content.classList.toggle('visible', index === currentSectionIndex);
+            }
+        });
+        
+        header.classList.toggle('scrolled', currentSectionIndex > 0);
+    };
+
+    // 初始化
+    updateNavAndAnimations();
+  });
+</script>
 
 </body>
+</html>
